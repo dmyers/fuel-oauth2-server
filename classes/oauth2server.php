@@ -54,4 +54,14 @@ class OAuth2Server extends OAuth2
 
 		return self::$_instance;
 	}
+	
+	public function __call($method, $args)
+	{
+		if (method_exists($this->storage, $method)) {
+			return call_user_func_array(array($this->storage, $method), $args);
+		}
+		else {
+			throw new \BadMethodCallException('Call to undefined method '.get_class($this).'::'.$method.'()');
+		}
+	}
 }
