@@ -8,8 +8,9 @@ class Create_Refresh_Tokens
 	{
 		\DBUtil::create_table('oauth_refresh_tokens', array(
 			'id' => array(
-				'type'       => 'int',
-				'constraint' => 10,
+				'type'           => 'int',
+				'constraint'     => 10,
+				'auto_increment' => true,
 			),
 			'refresh_token' => array(
 				'type'       => 'varchar',

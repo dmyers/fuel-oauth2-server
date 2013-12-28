@@ -8,8 +8,9 @@ class Create_Access_Tokens
 	{
 		\DBUtil::create_table('oauth_access_tokens', array(
 			'id' => array(
-				'type'       => 'int',
-				'constraint' => 10,
+				'type'           => 'int',
+				'constraint'     => 10,
+				'auto_increment' => true,
 			),
 			'oauth_token' => array(
 				'type'       => 'varchar',
